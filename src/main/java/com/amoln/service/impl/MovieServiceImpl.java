@@ -19,7 +19,7 @@ public class MovieServiceImpl implements IMovieService {
 	private MovieRepository movieRepository;
 
 	@Override
-	public List<MovieDTO> filterMovies(String title, LocalDate date, String Location, String genre) {
+	public List<MovieDTO> filterMovies(String title, LocalDate date, String location, String genre) {
 		List<Movie> movieList = movieRepository.findAll();
 		List<MovieDTO> filteredMovieDTO = new ArrayList<>();
 
@@ -32,7 +32,7 @@ public class MovieServiceImpl implements IMovieService {
 			if (date != null && !movie.getDate().isEqual(date)) {
 				match = false;
 			}
-			if (Location != null && !movie.getLocation().contains(Location)) {
+			if (location != null && !movie.getLocation().contains(location)) {
 				match = false;
 			}
 			if (genre != null && !movie.getGenre().contains(genre)) {

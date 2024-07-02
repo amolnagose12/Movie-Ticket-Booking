@@ -9,7 +9,7 @@ import com.amoln.entity.Movie;
 public interface IMovieService {
 
 	List<MovieDTO> filterMovies(String title,LocalDate date,
-			String Location, String genre);
+			String location, String genre);
 	
 	List<MovieDTO> getAllMovies(String title, LocalDate date, String location, String genre);
 	
